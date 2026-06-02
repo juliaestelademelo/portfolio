@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Search engine indexing: private portfolio, do not index -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- SEO: page description -->
+  <meta name="description" content="Digital marketing portfolio — landing pages, email marketing, SEO and GEO work by Julia Estela de Melo.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Digital Marketing — Julia Estela de Melo">
+  <meta property="og:description" content="Landing pages, email marketing, SEO and GEO work by Julia Estela de Melo.">
+  <meta property="og:type" content="website">
+
+ <title>Julia Estela de Melo — Front-End & SEO · Code Meets Strategy</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==============================
+       RESET & BASE
+    ============================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-bg:         #0a0a0a;
+      --color-bg-alt:     #141414;
+      --color-text:       #f0f0f0;
+      --color-muted:      #9b9b9b;
+      --color-accent:     #e8a0b0;
+      --color-border:     #2a2a2a;
+      --font-main:        'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    /* ==============================
+       NAVBAR
+    ============================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background-color: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar__logo {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .navbar__logo span { color: var(--color-accent); }
+
+    .navbar__links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .navbar__links a {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .navbar__links a:hover { color: var(--color-accent); }
+
+    .navbar__toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .navbar__toggle span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background-color: var(--color-text);
+      transition: background-color 0.2s;
+    }
+
+    .navbar__toggle:hover span { background-color: var(--color-accent); }
+
+    /* ==============================
+       PAGE HERO
+    ============================== */
+    .page-hero {
+      padding: 8rem 2rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .page-hero__label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+    }
+
+    .page-hero__title {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .page-hero__desc {
+      font-size: 0.9375rem;
+      color: var(--color-muted);
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+    /* ==============================
+       SECTION BASE
+    ============================== */
+    .section {
+      padding: 5rem 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .section--alt { background-color: var(--color-bg-alt); }
+
+    .section__container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section__label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .section__title {
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 0.5rem;
+    }
+
+    .section__desc {
+      font-size: 0.9375rem;
+      color: var(--color-muted);
+      max-width: 600px;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+
+    /* ==============================
+       CARDS GRID
+    ============================== */
+    .cards__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .card:hover { border-color: rgba(232, 160, 176, 0.3); }
+
+    .card__image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    .card__body {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .card__tag {
+      font-size: 0.75rem;
+      color: var(--color-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .card__title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-text);
+    }
+
+    .card__desc {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+
+    .card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--color-accent);
+      text-decoration: none;
+      margin-top: 0.5rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+      padding-bottom: 1px;
+      width: fit-content;
+    }
+
+    .card__link:hover { border-color: var(--color-accent); }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+    .footer {
+      padding: 1.75rem 2rem;
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .footer__left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .footer__copy {
+      font-size: 0.8125rem;
+      color: var(--color-muted);
+    }
+
+    .footer__location {
+      font-size: 0.8125rem;
+      color: var(--color-muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: nowrap;
+    }
+
+    .footer__location svg {
+      flex-shrink: 0;
+      display: block;
+      margin-top: 1px;
+    }
+
+    .footer__links {
+      display: flex;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+
+    .footer__link {
+      font-size: 0.8125rem;
+      color: var(--color-muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border: 1px solid var(--color-border);
+      padding: 0.35rem 0.75rem;
+      border-radius: 5px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .footer__link:hover {
+      color: var(--color-accent);
+      border-color: rgba(232, 160, 176, 0.3);
+    }
+
+    /* ==============================
+   PHONE MOCKUP
+============================== */
+.phone-mockup {
+  width: 200px;
+  margin: 1.5rem auto;
+  background-color: #1a1a1a;
+  border-radius: 36px;
+  padding: 12px;
+  box-shadow:
+    0 0 0 2px #333,
+    0 20px 40px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.phone-mockup::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 6px;
+  background-color: #333;
+  border-radius: 3px;
+  margin: 0 auto 10px;
+}
+
+.phone-mockup__screen {
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 9 / 16;
+  background-color: #fff;
+}
+
+.phone-mockup__screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+/* ==============================
+   EMAIL METRICS
+============================== */
+.email-metrics {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.email-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.email-metric__value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.email-metric__label {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+    /* ==============================
+       RESPONSIVE
+    ============================== */
+    @media (max-width: 768px) {
+      .navbar__links {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-bg);
+        border-bottom: 1px solid var(--color-border);
+        padding: 1.5rem 2rem;
+      }
+
+      .navbar__links.is-open { display: flex; }
+      .navbar__toggle { display: flex; }
+
+      .page-hero { padding: 7rem 1.5rem 3rem; }
+
+      .section { padding: 3rem 1.5rem; }
+
+      .cards__grid { grid-template-columns: 1fr; }
+
+      .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      .footer__left { align-items: center; }
+      .footer__location { justify-content: center; }
+      .footer__links { justify-content: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html" class="navbar__logo">Julia<span>.</span></a>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="digital-marketing.html" aria-current="page">Marketing</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <span class="page-hero__label">Digital Marketing</span>
+      <h1 class="page-hero__title">10+ years building campaigns,<br>pages and strategies that perform.</h1>
+      <p class="page-hero__desc">
+        A selection of work in landing pages, email marketing, SEO and GEO, developed for Brazilian and US-based companies.
+      </p>
+    </div>
+
+    <!-- LANDING PAGES -->
+    <section class="section section--alt" id="landing-pages">
+      <div class="section__container">
+        <h2 class="section__title">Landing Pages</h2>
+        <p class="section__desc">Pages built to convert — developed for B2B and B2C audiences, with focus on conversion, responsive design and target audience strategy.</p>
+        <div class="cards__grid">
+
+          <!-- Card: Magnum Revendedor -->
+          <div class="card">
+            <img src="assets/images/magnum-revendedor.png" alt="Magnum Tires reseller landing page" class="card__image" loading="lazy">
+            <div class="card__body">
+              <span class="card__tag">WordPress · B2B · Brazil</span>
+              <h3 class="card__title">Magnum Tires — Reseller</h3>
+              <p class="card__desc">Landing page aimed at the reseller audience, featuring key segment information, FAQ and conversion form.</p>
+              <a href="https://magnumtires.com.br/revendedor/" target="_blank" rel="noopener noreferrer" class="card__link">View page →</a>
+            </div>
+          </div>
+
+          <!-- Card: Magnum OTR -->
+          <div class="card">
+            <img src="assets/images/magnum-otr.png" alt="Magnum Tires OTR landing page" class="card__image" loading="lazy">
+            <div class="card__body">
+              <span class="card__tag">WordPress · B2B · Brazil</span>
+              <h3 class="card__title">Magnum Tires — OTR</h3>
+              <p class="card__desc">Page focused on the agribusiness audience, presenting the OTR and industrial tyre portfolio with a quote request form.</p>
+              <a href="https://magnumtires.com.br/otr/" target="_blank" rel="noopener noreferrer" class="card__link">View page →</a>
+            </div>
+          </div>
+
+          <!-- Card: FS Services -->
+          <div class="card">
+            <img src="assets/images/fs-services.png" alt="FS Agency services page" class="card__image" loading="lazy">
+            <div class="card__body">
+              <span class="card__tag">WordPress · Wonderblocks · USA</span>
+              <h3 class="card__title">The FS Agency — Services</h3>
+              <p class="card__desc">Main services page presenting comprehensive marketing and SEO solutions for local service businesses.</p>
+              <a href="https://fsagency.co/services/" target="_blank" rel="noopener noreferrer" class="card__link">View page →</a>
+            </div>
+          </div>
+
+          <!-- Card: FS AI Consulting -->
+          <div class="card">
+            <img src="assets/images/fs-consulting.png" alt="FS Agency AI consulting page" class="card__image" loading="lazy">
+            <div class="card__body">
+              <span class="card__tag">WordPress · Wonderblocks · USA</span>
+              <h3 class="card__title">The FS Agency — AI Consulting</h3>
+              <p class="card__desc">Page focused on AI consulting for growing service businesses, covering governance, workflows and team training.</p>
+              <a href="https://fsagency.co/ai-consulting/" target="_blank" rel="noopener noreferrer" class="card__link">View page →</a>
+            </div>
+          </div>
+
+          <!-- Card: FS Hospitality -->
+          <div class="card">
+            <img src="assets/images/fs-hospitality.png" alt="FS Agency hospitality page" class="card__image" loading="lazy">
+            <div class="card__body">
+              <span class="card__tag">WordPress · Wonderblocks · USA</span>
+              <h3 class="card__title">The FS Agency — Hospitality</h3>
+              <p class="card__desc">Industry-specific page addressing the AI discovery gap for hotels, with focus on GEO and AI search visibility.</p>
+              <a href="https://fsagency.co/hospitality/" target="_blank" rel="noopener noreferrer" class="card__link">View page →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SEO PAGES -->
+<section class="section" id="seo-pages">
+  <div class="section__container">
+    <h2 class="section__title">SEO Pages</h2>
+<p class="section__desc">Pages built to rank and convert — developed for US-based clients, with focus on Local SEO, search intent and long-term organic growth.</p>
+    <div class="cards__grid">
+
+      <!-- Card: Grow Boulder — Service -->
+      <div class="card">
+        <img src="assets/images/grow-services.png" alt="Grow Boulder landscape design service page" class="card__image" loading="lazy">
+        <div class="card__body">
+          <span class="card__tag">Wix · Local SEO · USA</span>
+          <h3 class="card__title">Grow Boulder — Service Page</h3>
+          <p class="card__desc">Service page focused on landscape design and build, optimized for search intent and local audience in Boulder, CO.</p>
+          <a href="https://www.grow-boulder.com/landscape-design-build-boulder-co" target="_blank" rel="noopener noreferrer" class="card__link">View page →</a>
+        </div>
+      </div>
+
+      <!-- Card: Grow Boulder — Location -->
+      <div class="card">
+        <img src="assets/images/grow-local.png" alt="Grow Boulder Louisville location page" class="card__image" loading="lazy">
+        <div class="card__body">
+          <span class="card__tag">Wix · Local SEO · USA</span>
+          <h3 class="card__title">Grow Boulder — Location Page</h3>
+          <p class="card__desc">Location page targeting the Louisville, CO area — structured for local search visibility and neighborhood-specific relevance.</p>
+          <a href="https://www.grow-boulder.com/services/smart-irrigation-drainage-boulder" target="_blank" rel="noopener noreferrer" class="card__link">View page →</a>
+        </div>
+      </div>
+
+      <!-- Card: Professor Wiseacres — Service -->
+      <div class="card">
+        <img src="assets/images/professor-services.png" alt="Professor Wiseacres FertiWiser service page" class="card__image" loading="lazy">
+        <div class="card__body">
+          <span class="card__tag">Wix · Local SEO · USA</span>
+          <h3 class="card__title">Professor Wiseacres — Service Page</h3>
+          <p class="card__desc">Service page for the FertiWiser product line, optimized for search intent around fertigation technology for residential properties.</p>
+          <a href="https://www.professorwiseacres.com/fertiwiser" target="_blank" rel="noopener noreferrer" class="card__link">View page →</a>
+        </div>
+      </div>
+
+      <!-- Card: Professor Wiseacres — Location -->
+      <div class="card">
+        <img src="assets/images/professor-local.png" alt="Professor Wiseacres Erie CO location page" class="card__image" loading="lazy">
+        <div class="card__body">
+          <span class="card__tag">Wix · Local SEO · USA</span>
+          <h3 class="card__title">Professor Wiseacres — Location Page</h3>
+          <p class="card__desc">Location page targeting Erie, CO — built to capture local search demand with neighborhood-specific content and clear service offering.</p>
+          <a href="https://www.professorwiseacres.com/services/erie-co" target="_blank" rel="noopener noreferrer" class="card__link">View page →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL MARKETING -->
+<section class="section section--alt" id="email-marketing">
+  <div class="section__container">
+    <h2 class="section__title">Email Marketing</h2>
+    <p class="section__desc">
+      Campaigns developed for B2B and B2C audiences across Brazil and the US, with focus on segmentation, copywriting and measurable results.
+    </p>
+    <div class="cards__grid">
+
+      <!-- Card: Magnum Tires -->
+      <div class="card">
+        <div class="phone-mockup">
+          <div class="phone-mockup__screen">
+            <img src="assets/images/email-magnum.png" alt="Magnum Tires reactivation email" loading="lazy">
+          </div>
+        </div>
+        <div class="card__body">
+          <span class="card__tag">HTML Email · B2B & B2C · Brazil</span>
+          <h3 class="card__title">Magnum Tires — Inactive Clients Reactivation</h3>
+          <p class="card__desc">Email campaign targeting inactive B2B and B2C clients across Brazil. Segmented by purchase inactivity over 3 months.</p>
+          <div class="email-metrics">
+            <div class="email-metric">
+              <span class="email-metric__value">63</span>
+              <span class="email-metric__label">Clients reactivated</span>
+            </div>
+            <div class="email-metric">
+              <span class="email-metric__value">13.1%</span>
+              <span class="email-metric__label">Open rate</span>
+            </div>
+            <div class="email-metric">
+              <span class="email-metric__value">R$516k</span>
+              <span class="email-metric__label">Revenue generated</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: The FS Agency — Google Reviews -->
+      <div class="card">
+        <div class="phone-mockup">
+          <div class="phone-mockup__screen">
+            <img src="assets/images/fs-email1.png" alt="The FS Agency email about Google reviews update" loading="lazy">
+          </div>
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Beehiiv · Newsletter · USA</span>
+          <h3 class="card__title">The FS Agency — Google Reviews Update</h3>
+          <p class="card__desc">Newsletter alerting local service businesses about Google's algorithm change on reviews, with actionable guidance.</p>
+          <div class="email-metrics">
+            <div class="email-metric">
+              <span class="email-metric__value">2,799</span>
+              <span class="email-metric__label">Delivered</span>
+            </div>
+            <div class="email-metric">
+              <span class="email-metric__value">41.05%</span>
+              <span class="email-metric__label">Open rate</span>
+            </div>
+            <div class="email-metric">
+              <span class="email-metric__value">98.76%</span>
+              <span class="email-metric__label">Delivery rate</span>
+            </div>
+          </div>
+          <a href="https://fsagency.beehiiv.com/p/google-just-changed-the-rules-on-reviews" target="_blank" rel="noopener noreferrer" class="card__link">View email →</a>
+        </div>
+      </div>
+
+      <!-- Card: The FS Agency — Marketing Agencies -->
+      <div class="card">
+        <div class="phone-mockup">
+          <div class="phone-mockup__screen">
+            <img src="assets/images/fs-email2.png" alt="The FS Agency email about marketing agencies" loading="lazy">
+          </div>
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Beehiiv · Newsletter · USA</span>
+          <h3 class="card__title">The FS Agency — Why Most Agencies Fail</h3>
+          <p class="card__desc">Newsletter addressing why most marketing agencies fail to drive real growth for home service businesses.</p>
+          <div class="email-metrics">
+            <div class="email-metric">
+              <span class="email-metric__value">3,730</span>
+              <span class="email-metric__label">Delivered</span>
+            </div>
+            <div class="email-metric">
+              <span class="email-metric__value">45.92%</span>
+              <span class="email-metric__label">Open rate</span>
+            </div>
+            <div class="email-metric">
+              <span class="email-metric__value">97.64%</span>
+              <span class="email-metric__label">Delivery rate</span>
+            </div>
+          </div>
+          <a href="https://fsagency.beehiiv.com/p/why-most-marketing-agencies-fail-to-drive-real-growth-for-home-service-businesses" target="_blank" rel="noopener noreferrer" class="card__link">View email →</a>
+        </div>
+      </div>
+
+      <!-- Card: BBB Palm Beach -->
+      <div class="card">
+        <div class="phone-mockup">
+          <div class="phone-mockup__screen">
+            <img src="assets/images/email-bbb.png" alt="Bumble Bee Blinds Palm Beach email" loading="lazy">
+          </div>
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Beehiiv · Newsletter · USA</span>
+          <h3 class="card__title">Bumble Bee Blinds Palm Beach — Spring & Summer Prep</h3>
+          <p class="card__desc">Newsletter preparing clients for the summer season with smart shading tips and local networking opportunities.</p>
+          <div class="email-metrics">
+            <div class="email-metric">
+              <span class="email-metric__value">803</span>
+              <span class="email-metric__label">Delivered</span>
+            </div>
+            <div class="email-metric">
+              <span class="email-metric__value">35.37%</span>
+              <span class="email-metric__label">Open rate</span>
+            </div>
+            <div class="email-metric">
+              <span class="email-metric__value">95.71%</span>
+              <span class="email-metric__label">Delivery rate</span>
+            </div>
+          </div>
+          <a href="https://bumble-bee-blinds-palm-beach.beehiiv.com/p/spring-summer-prep-smart-shading-for-palm-beach" target="_blank" rel="noopener noreferrer" class="card__link">View email →</a>
+        </div>
+      </div>
+
+      <!-- Card: BBB Fairfield -->
+      <div class="card">
+        <div class="phone-mockup">
+          <div class="phone-mockup__screen">
+            <img src="assets/images/email-bbb-fairfield.png" alt="Bumble Bee Blinds Fairfield email" loading="lazy">
+          </div>
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Beehiiv · Newsletter · USA</span>
+          <h3 class="card__title">Bumble Bee Blinds Fairfield — February Light Edit</h3>
+          <p class="card__desc">Newsletter sharing winter comfort tips and 2026 drapery trends for Fairfield County homeowners.</p>
+          <div class="email-metrics">
+            <div class="email-metric">
+              <span class="email-metric__value">213</span>
+              <span class="email-metric__label">Delivered</span>
+            </div>
+            <div class="email-metric">
+              <span class="email-metric__value">65.73%</span>
+              <span class="email-metric__label">Open rate</span>
+            </div>
+            <div class="email-metric">
+              <span class="email-metric__value">98.16%</span>
+              <span class="email-metric__label">Delivery rate</span>
+            </div>
+          </div>
+          <a href="https://bumble-bee-blinds-fairfield.beehiiv.com/p/february-light-edit-cozy-comfort-2026-drapery-trends" target="_blank" rel="noopener noreferrer" class="card__link">View email →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__left">
+      <p class="footer__copy" id="footerCopy"></p>
+      <p class="footer__location">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e8a0b0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+        Based in Brazil — open to remote work and relocation in Germany and Austria.
+      </p>
+    </div>
+    <nav class="footer__links" aria-label="Social links">
+      <a href="https://www.linkedin.com/in/juliaestelamelo/" target="_blank" rel="noopener noreferrer" class="footer__link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/juliaestelademelo" target="_blank" rel="noopener noreferrer" class="footer__link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+        </svg>
+        GitHub
+      </a>
+    </nav>
+  </footer>
+
+  <!-- SCRIPT: mobile menu + footer year -->
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = links.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    links.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        links.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.getElementById('footerCopy').textContent =
+      `\u00A9 ${new Date().getFullYear()} Julia Estela de Melo`;
+  </script>
+
+</body>
+</html>
