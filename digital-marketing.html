@@ -386,6 +386,132 @@
   color: var(--color-muted);
 }
 
+/* ==============================
+   SEO STATS
+============================== */
+.seo-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.seo-stat {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.seo-stat__value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.seo-stat__label {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+}
+
+/* ==============================
+   CHART
+============================== */
+.chart-wrapper {
+  margin-bottom: 3rem;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.chart-legend__item {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chart-legend__item::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.chart-legend__item--impressions::before {
+  background-color: var(--color-accent);
+}
+
+.chart-legend__item--clicks::before {
+  background-color: #a8d8ea;
+}
+
+.chart {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+#seoCanvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* ==============================
+   SEO STRATEGIES
+============================== */
+.seo-strategies__title {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.seo-strategies__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.seo-strategy {
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.6;
+}
+
+.seo-strategy .skill-dot {
+  margin-top: 6px;
+}
+
+.skill-dot {
+  width: 6px;
+  height: 6px;
+  min-width: 6px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .seo-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
     /* ==============================
        RESPONSIVE
     ============================== */
@@ -597,50 +723,46 @@
           <h3 class="card__title">Magnum Tires — Inactive Clients Reactivation</h3>
           <p class="card__desc">Email campaign targeting inactive B2B and B2C clients across Brazil. Segmented by purchase inactivity over 3 months.</p>
           <div class="email-metrics">
-            <div class="email-metric">
-              <span class="email-metric__value">63</span>
-              <span class="email-metric__label">Clients reactivated</span>
-            </div>
-            <div class="email-metric">
-              <span class="email-metric__value">13.1%</span>
-              <span class="email-metric__label">Open rate</span>
-            </div>
-            <div class="email-metric">
-              <span class="email-metric__value">R$516k</span>
-              <span class="email-metric__label">Revenue generated</span>
-            </div>
-          </div>
+  <div class="email-metric">
+    <span class="email-metric__value">13.1%</span>
+    <span class="email-metric__label">Open rate</span>
+  </div>
+  <div class="email-metric">
+    <span class="email-metric__value">8.4%</span>
+    <span class="email-metric__label">Click-to-open rate</span>
+  </div>
+  <div class="email-metric">
+    <span class="email-metric__value">R$516k (~$98k)</span>
+    <span class="email-metric__label">Revenue generated</span>
+  </div>
+</div>
         </div>
       </div>
 
       <!-- Card: The FS Agency — Google Reviews -->
-      <div class="card">
-        <div class="phone-mockup">
-          <div class="phone-mockup__screen">
-            <img src="assets/images/fs-email1.png" alt="The FS Agency email about Google reviews update" loading="lazy">
-          </div>
-        </div>
-        <div class="card__body">
-          <span class="card__tag">Beehiiv · Newsletter · USA</span>
-          <h3 class="card__title">The FS Agency — Google Reviews Update</h3>
-          <p class="card__desc">Newsletter alerting local service businesses about Google's algorithm change on reviews, with actionable guidance.</p>
-          <div class="email-metrics">
-            <div class="email-metric">
-              <span class="email-metric__value">2,799</span>
-              <span class="email-metric__label">Delivered</span>
-            </div>
-            <div class="email-metric">
-              <span class="email-metric__value">41.05%</span>
-              <span class="email-metric__label">Open rate</span>
-            </div>
-            <div class="email-metric">
-              <span class="email-metric__value">98.76%</span>
-              <span class="email-metric__label">Delivery rate</span>
-            </div>
-          </div>
-          <a href="https://fsagency.beehiiv.com/p/google-just-changed-the-rules-on-reviews" target="_blank" rel="noopener noreferrer" class="card__link">View email →</a>
-        </div>
+<div class="card">
+  <div class="phone-mockup">
+    <div class="phone-mockup__screen">
+      <img src="assets/images/fs-email1.png" alt="The FS Agency email about Google reviews update" loading="lazy">
+    </div>
+  </div>
+  <div class="card__body">
+    <span class="card__tag">Beehiiv · Newsletter · USA</span>
+    <h3 class="card__title">The FS Agency — Google Reviews Update</h3>
+    <p class="card__desc">Newsletter alerting local service businesses about Google's algorithm change on reviews, with actionable guidance.</p>
+    <div class="email-metrics" style="flex-wrap: nowrap;">
+      <div class="email-metric">
+        <span class="email-metric__value">41.05%</span>
+        <span class="email-metric__label">Open rate</span>
       </div>
+      <div class="email-metric">
+        <span class="email-metric__value">1.91%</span>
+        <span class="email-metric__label">Click-to-open rate</span>
+      </div>
+    </div>
+    <a href="https://fsagency.beehiiv.com/p/google-just-changed-the-rules-on-reviews" target="_blank" rel="noopener noreferrer" class="card__link">View email →</a>
+  </div>
+</div>
 
       <!-- Card: The FS Agency — Marketing Agencies -->
       <div class="card">
@@ -654,19 +776,15 @@
           <h3 class="card__title">The FS Agency — Why Most Agencies Fail</h3>
           <p class="card__desc">Newsletter addressing why most marketing agencies fail to drive real growth for home service businesses.</p>
           <div class="email-metrics">
-            <div class="email-metric">
-              <span class="email-metric__value">3,730</span>
-              <span class="email-metric__label">Delivered</span>
-            </div>
-            <div class="email-metric">
-              <span class="email-metric__value">45.92%</span>
-              <span class="email-metric__label">Open rate</span>
-            </div>
-            <div class="email-metric">
-              <span class="email-metric__value">97.64%</span>
-              <span class="email-metric__label">Delivery rate</span>
-            </div>
-          </div>
+  <div class="email-metric">
+    <span class="email-metric__value">45.92%</span>
+    <span class="email-metric__label">Open rate</span>
+  </div>
+  <div class="email-metric">
+    <span class="email-metric__value">3.15%</span>
+    <span class="email-metric__label">Click-to-open rate</span>
+  </div>
+</div>
           <a href="https://fsagency.beehiiv.com/p/why-most-marketing-agencies-fail-to-drive-real-growth-for-home-service-businesses" target="_blank" rel="noopener noreferrer" class="card__link">View email →</a>
         </div>
       </div>
@@ -683,19 +801,15 @@
           <h3 class="card__title">Bumble Bee Blinds Palm Beach — Spring & Summer Prep</h3>
           <p class="card__desc">Newsletter preparing clients for the summer season with smart shading tips and local networking opportunities.</p>
           <div class="email-metrics">
-            <div class="email-metric">
-              <span class="email-metric__value">803</span>
-              <span class="email-metric__label">Delivered</span>
-            </div>
-            <div class="email-metric">
-              <span class="email-metric__value">35.37%</span>
-              <span class="email-metric__label">Open rate</span>
-            </div>
-            <div class="email-metric">
-              <span class="email-metric__value">95.71%</span>
-              <span class="email-metric__label">Delivery rate</span>
-            </div>
-          </div>
+  <div class="email-metric">
+    <span class="email-metric__value">35.37%</span>
+    <span class="email-metric__label">Open rate</span>
+  </div>
+  <div class="email-metric">
+    <span class="email-metric__value">2.82%</span>
+    <span class="email-metric__label">Click-to-open rate</span>
+  </div>
+</div>
           <a href="https://bumble-bee-blinds-palm-beach.beehiiv.com/p/spring-summer-prep-smart-shading-for-palm-beach" target="_blank" rel="noopener noreferrer" class="card__link">View email →</a>
         </div>
       </div>
@@ -712,24 +826,81 @@
           <h3 class="card__title">Bumble Bee Blinds Fairfield — February Light Edit</h3>
           <p class="card__desc">Newsletter sharing winter comfort tips and 2026 drapery trends for Fairfield County homeowners.</p>
           <div class="email-metrics">
-            <div class="email-metric">
-              <span class="email-metric__value">213</span>
-              <span class="email-metric__label">Delivered</span>
-            </div>
-            <div class="email-metric">
-              <span class="email-metric__value">65.73%</span>
-              <span class="email-metric__label">Open rate</span>
-            </div>
-            <div class="email-metric">
-              <span class="email-metric__value">98.16%</span>
-              <span class="email-metric__label">Delivery rate</span>
-            </div>
-          </div>
-          <a href="https://bumble-bee-blinds-fairfield.beehiiv.com/p/february-light-edit-cozy-comfort-2026-drapery-trends" target="_blank" rel="noopener noreferrer" class="card__link">View email →</a>
+  <div class="email-metric">
+    <span class="email-metric__value">59.24%</span>
+    <span class="email-metric__label">Open rate</span>
+  </div>
+  <div class="email-metric">
+    <span class="email-metric__value">0.8%</span>
+    <span class="email-metric__label">Click-to-open rate</span>
+  </div>
+</div>
+<a href="https://bumble-bee-blinds-fairfield.beehiiv.com/p/the-fairfield-march-refresh" target="_blank" rel="noopener noreferrer" class="card__link">View email →</a>
         </div>
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- SEO RESULTS -->
+<section class="section" id="seo-results">
+  <div class="section__container">
+    <h2 class="section__title">Organic Growth</h2>
+    <p class="section__desc">
+      Real GSC data from a US-based website I managed — March to June 2026. Impressions and clicks tracked weekly.
+    </p>
+
+    <!-- Stats summary -->
+    <div class="seo-stats">
+      <div class="seo-stat">
+        <span class="seo-stat__value">+900%</span>
+        <span class="seo-stat__label">Click growth</span>
+      </div>
+      <div class="seo-stat">
+        <span class="seo-stat__value">+140%</span>
+        <span class="seo-stat__label">Impression growth</span>
+      </div>
+      <div class="seo-stat">
+        <span class="seo-stat__value">5,129</span>
+        <span class="seo-stat__label">Peak daily impressions</span>
+      </div>
+      <div class="seo-stat">
+        <span class="seo-stat__value">30</span>
+        <span class="seo-stat__label">Peak daily clicks</span>
+      </div>
+    </div>
+
+    <!-- Chart -->
+    <div class="chart-wrapper">
+      <div class="chart-legend">
+        <span class="chart-legend__item chart-legend__item--impressions">Impressions</span>
+        <span class="chart-legend__item chart-legend__item--clicks">Clicks</span>
+      </div>
+      <div class="chart" id="seoChart">
+        <canvas id="seoCanvas"></canvas>
+      </div>
+    </div>
+
+    <!-- Strategies -->
+    <div class="seo-strategies">
+      <p class="seo-strategies__title">Strategies applied</p>
+      <div class="seo-strategies__grid">
+        <div class="seo-strategy">
+          <span class="skill-dot" aria-hidden="true"></span>
+          On-page SEO optimization using traditional and AI-assisted techniques
+        </div>
+        <div class="seo-strategy">
+          <span class="skill-dot" aria-hidden="true"></span>
+          Service and location pages creation focused on local search intent
+        </div>
+        <div class="seo-strategy">
+          <span class="skill-dot" aria-hidden="true"></span>
+          Blog post optimization for AI Search and Generative Engine Optimization (GEO)
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -784,6 +955,151 @@
 
     document.getElementById('footerCopy').textContent =
       `\u00A9 ${new Date().getFullYear()} Julia Estela de Melo`;
+
+      // SEO Chart — animated line chart using Canvas API
+const canvas = document.getElementById('seoCanvas');
+const ctx = canvas.getContext('2d');
+
+// Weekly aggregated data (March to June 2026)
+const labels = [
+  'Mar W1', 'Mar W2', 'Mar W3', 'Mar W4',
+  'Apr W1', 'Apr W2', 'Apr W3', 'Apr W4',
+  'May W1', 'May W2', 'May W3', 'May W4',
+  'Jun W1'
+];
+
+const impressions = [
+  12332, 11557, 14170, 18445,
+  17817, 17082, 24433, 27019,
+  24268, 21960, 17657, 12264,
+  1408
+];
+
+const clicks = [
+  21, 17, 30, 42,
+  36, 37, 97, 89,
+  71, 51, 47, 18,
+  7
+];
+
+// Canvas setup
+function setupCanvas() {
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.parentElement.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = 300 * dpr;
+  canvas.style.width = rect.width + 'px';
+  canvas.style.height = '300px';
+  ctx.scale(dpr, dpr);
+  return { width: rect.width, height: 300 };
+}
+
+const padding = { top: 20, right: 20, bottom: 40, left: 55 };
+let animationProgress = 0;
+let animationId = null;
+let hasAnimated = false;
+
+function drawChart(progress) {
+  const { width, height } = setupCanvas();
+  ctx.clearRect(0, 0, width, height);
+
+  const chartWidth = width - padding.left - padding.right;
+  const chartHeight = height - padding.top - padding.bottom;
+
+  const maxImpressions = Math.max(...impressions);
+  const maxClicks = Math.max(...clicks);
+
+  const pointCount = Math.floor(progress * (labels.length - 1)) + 1;
+
+  // Grid lines
+  ctx.strokeStyle = '#2a2a2a';
+  ctx.lineWidth = 1;
+  for (let i = 0; i <= 4; i++) {
+    const y = padding.top + (chartHeight / 4) * i;
+    ctx.beginPath();
+    ctx.moveTo(padding.left, y);
+    ctx.lineTo(padding.left + chartWidth, y);
+    ctx.stroke();
+
+    // Y axis labels (impressions)
+    const value = Math.round(maxImpressions - (maxImpressions / 4) * i);
+    ctx.fillStyle = '#9b9b9b';
+    ctx.font = '11px Inter, sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText(value >= 1000 ? (value / 1000).toFixed(1) + 'k' : value, padding.left - 8, y + 4);
+  }
+
+  // X axis labels
+  ctx.fillStyle = '#9b9b9b';
+  ctx.font = '11px Inter, sans-serif';
+  ctx.textAlign = 'center';
+  labels.forEach((label, i) => {
+    const x = padding.left + (chartWidth / (labels.length - 1)) * i;
+    ctx.fillText(label, x, height - padding.bottom + 20);
+  });
+
+  // Draw impressions line
+  function drawLine(data, max, color, glowColor) {
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2;
+    ctx.shadowColor = glowColor;
+    ctx.shadowBlur = 8;
+
+    for (let i = 0; i < pointCount; i++) {
+      const x = padding.left + (chartWidth / (labels.length - 1)) * i;
+      const y = padding.top + chartHeight - (data[i] / max) * chartHeight;
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+
+    // Dots
+    for (let i = 0; i < pointCount; i++) {
+      const x = padding.left + (chartWidth / (labels.length - 1)) * i;
+      const y = padding.top + chartHeight - (data[i] / max) * chartHeight;
+      ctx.beginPath();
+      ctx.arc(x, y, 3, 0, Math.PI * 2);
+      ctx.fillStyle = color;
+      ctx.fill();
+    }
+  }
+
+  drawLine(impressions, maxImpressions, '#e8a0b0', '#e8a0b0');
+  drawLine(clicks, maxClicks, '#a8d8ea', '#a8d8ea');
+}
+
+function animate() {
+ animationProgress += 0.001;
+  if (animationProgress >= 1) {
+    animationProgress = 1;
+    drawChart(1);
+    return;
+  }
+  drawChart(animationProgress);
+  animationId = requestAnimationFrame(animate);
+}
+
+// Trigger animation on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !hasAnimated) {
+      hasAnimated = true;
+      animate();
+    }
+  });
+}, { threshold: 0.3 });
+
+observer.observe(document.getElementById('seoChart'));
+
+// Redraw on resize
+window.addEventListener('resize', () => {
+  cancelAnimationFrame(animationId);
+  animationProgress = hasAnimated ? 1 : 0;
+  drawChart(animationProgress);
+});
+
   </script>
 
 </body>
