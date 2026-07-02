@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --back: #f8f7f4;
     --dark-green: #1a3a2a;
@@ -11,5 +17,11 @@
 }
 
 body{
+background-color: var(--back);
+font-family: var(--main-font);
+color: var(--text);
+}
 
+h1,h2,h3{
+    font-family: var(--title-font);
 }
