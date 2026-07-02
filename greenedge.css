@@ -24,4 +24,38 @@ color: var(--text);
 
 h1,h2,h3{
     font-family: var(--title-font);
+    color: var(--dark-green);
+}
+
+header{
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: var(--medium-green);
+color: white;
+padding: 1em 2em;
+}
+
+.logo{
+    text-decoration: none;
+    color: var(--light-green);
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 3em;
+}
+
+nav a{
+    text-decoration: none;
+    color: var(--light-green);
+    padding: 0.5em 0.8em;
+    transition: background-color 0.3s ease;
+    border-radius: 6px;
+}
+
+nav a:hover{
+    background-color: rgba(255, 255, 255, 0.151);
+    color: var(--dark-green);
 }
