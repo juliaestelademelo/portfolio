@@ -59,3 +59,28 @@ nav a:hover{
     background-color: rgba(255, 255, 255, 0.151);
     color: var(--dark-green);
 }
+
+.hero{
+    text-align: center;
+    padding: 10em;
+}
+
+.hero h1{
+    font-size: 3.5em;
+    margin-bottom: 1em;
+}
+
+.hero .btn{
+    display: inline-block;
+    background-color: var(--dark-green);
+    color: white;
+    padding: 1em 2rem;
+    text-decoration: none;
+    transition: background-color 0.8s ease, transform 0.3s ease;
+}
+
+.btn:hover{
+    background-color: var(--light-green);
+    color: var(--dark-green);
+    transform: scale(1.05);    
+}
