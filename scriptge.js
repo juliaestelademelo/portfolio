@@ -30,6 +30,7 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     }    
       else {
       formMessage.innerHTML = "Thank you! Your request has been sent successfully.";
+      document.getElementById("contactForm").reset();
     }
 
   
