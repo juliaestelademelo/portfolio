@@ -35,6 +35,7 @@ h2,h3{
 header{
 display: flex;
 justify-content: space-between;
+gap: 7em;
 align-items: center;
 background-color: var(--medium-green);
 color: white;
@@ -137,6 +138,8 @@ h2{
     margin-bottom: 1em;
     font-family: var(--title-font);
     text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .columns{
@@ -195,9 +198,25 @@ label{
 input, textarea, select{
     margin-top: 0.4em;
     padding: 0.4em;
-    border-radius: 5px;
     font-family: var(--main-font);
+    border: 0;
+    border-bottom: 1px solid var(--medium-green);
 }
+
+input:focus, textarea:focus, select:focus{
+       border-bottom: 3px solid var(--medium-green);
+        outline: 0;
+        background-color: var(--light-green);
+
+}
+
+input:not(:placeholder-shown), textarea:not(:placeholder-shown), select:valid {
+    border-bottom: 3px solid var(--medium-green);
+        outline: 0;
+        background-color: var(--light-green);
+}
+
+
 
 textarea{
     resize: vertical;
