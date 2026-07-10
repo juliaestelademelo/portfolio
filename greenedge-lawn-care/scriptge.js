@@ -38,3 +38,26 @@ document.getElementById("contactForm").addEventListener("submit", function(event
   }
 
 );
+
+
+
+
+  var ham = document.querySelector(".hamburguer");
+  var men = document.querySelector("nav");
+
+ham.addEventListener("click", function() {
+
+men.classList.toggle("nav-open")
+  
+
+
+});
+
+var nav = document.querySelectorAll("nav a")
+
+nav.forEach(function(a) {
+ a.addEventListener("click", function(){
+  men.classList.remove("nav-open")
+ })
+
+});

@@ -246,3 +246,44 @@ footer{
 footer p{
     opacity: 70%;
 }
+
+.hamburguer {
+    display: none;
+}
+
+
+@media (max-width: 768px)
+{
+ header{
+    flex-direction: column;
+  }
+
+  nav ul{
+    flex-direction: column;
+  }
+
+  .columns{
+     flex-direction: column;
+     align-items: center;
+  }
+  .hero{
+    padding: 3em;
+  }
+
+ .hamburguer {
+    display:block;
+    background-color: transparent;
+    border: 0;
+    font-size: 2em;
+    margin: 0;
+    width: auto;
+}
+
+nav{
+    display: none;
+}
+
+nav.nav-open{
+    display: block;
+}
+}
