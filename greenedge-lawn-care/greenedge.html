@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenEdge Lawn Care</title>
+    <meta name="description" content="GreenEdge Lawn Care provides professional lawn mowing, fertilization, and irrigation services. Licensed, insured, and trusted for reliable home lawn care."">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <link rel="stylesheet" href="greenedge.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+    <header>
+            <a href="#hero" class="logo">
+                <span class="logo-icon">🌿</span> GreenEdge
+            </a>
+            <button class="hamburguer" aria-label="Open menu">☰</button>
+        <nav class="nav">
+            <ul>
+                <li><a href="#services-section">Services</a></li>
+                <li><a href="#about">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="hero" aria-label="Fresh green lawn background">
+            <h1>Your lawn, our passion</h1>
+            <p></p>
+            <a href="#contact" class="btn">Get a free estimate</a>
+        </section>
+    
+
+        <section class="services" id="services-section">
+            <h2>Our Services</h2>
+            <div class="columns">
+        <article class="service-card">
+            <h3>Lawn Mowing</h3>
+            <img src="https://loremflickr.com/300/200/grass" alt="Lawn mowing service">
+        <p>Regular mowing to keep your lawn healthy, even, and looking sharp all season long.</p>
+        </article>
+        <article class="service-card">
+            <h3>Fertilization</h3>
+            <img src="https://loremflickr.com/300/200/garden" alt="Lawn fertilization service">
+            <p>Custom fertilization plans that feed your soil and keep your grass green year-round.</p>
+        </article>
+        <article class="service-card">
+            <h3>Irrigation</h3>
+            <img src="https://loremflickr.com/300/200/sprinkler,irrigation" alt="Lawn irrigation service">
+            <p>Smart irrigation solutions that save water while keeping your lawn perfectly hydrated."</p>
+        </article>
+        </div>
+        </section>
+
+        <section class="about" id="about">
+            <h2>Why Us</h2>
+            <div class="columns">
+        <article class="service-card">
+            <h3>Licensed and Insured</h3>
+            <p>Fully licensed and insured, so you can trust our team with your property.</p>
+        </article>
+        <article class="service-card">
+            <h3>Free Estimates</h3>
+            <p>Get a no-obligation quote before we start — transparent pricing, no surprises.</p>
+        </article>
+        <article class="service-card">
+            <h3>Satisfaction Guaranteed</h3>
+            <p>Not happy with the results? We'll make it right, guaranteed.</p>
+        </article>
+        </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>Contact us</h2>
+            <form id="contactForm" novalidate>
+                    <label for="name">Your name</label>
+                    <input type="text" id="name" name="name" placeholder="John Smith">
+
+                    <label for="email">Your email</label>
+                    <input type="email" id="email" name="email" placeholder="john@email.com">
+                    
+                    <label for="services">Service you look for</label>
+                <select name="services" id="services" required>
+                    <option value="">Select a service</option>
+                    <option value="mowing">Lawn Mowing</option>
+                    <option value="fertilization">Fertilization</option>
+                    <option value="irrigation">Irrigation</option>
+                </select>
+            
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" placeholder="Tell us about your lawn..."></textarea>
+                    <div id="formMessage"></div>
+                <button type="submit" id="submitbtn" class="btn">Get a free estimate</button>
+            </form>
+        </section>
+    
+    </main>
+    <footer><p>&copy; 2026 GreenEdge Lawn Care — Portfolio project</p>
+</footer>
+    <script src="scriptge.js"></script>
+</body>
+</html>
